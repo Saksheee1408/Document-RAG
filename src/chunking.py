@@ -31,8 +31,8 @@ class TextChunker:
 
     def __init__(
         self,
-        target_chunk_size: int = 600,  # approximate word/token target
-        overlap: int = 100,            # approximate word/token overlap
+        target_chunk_size: int = 200,  # approximate word/token target
+        overlap: int = 40,            # approximate word/token overlap
         min_chunk_size: int = 50,       # skip tiny empty fragments unless only text
     ):
         self.target_chunk_size = target_chunk_size

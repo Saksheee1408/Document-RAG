@@ -30,6 +30,8 @@ class AppConfig:
     embedding_model: str = "all-MiniLM-L6-v2"
 
     # Retrieval Settings
+    target_chunk_size: int = 200
+    overlap: int = 40
     top_k: int = 4
     similarity_threshold: float = 0.20
 
