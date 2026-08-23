@@ -1,0 +1,17 @@
+# Environment Variables
+.env
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Vector Store and Processed Data Output
+vector_store_data/
+processed_data/
+
+# Virtual Environment & OS Files
+venv/
+.venv/
+.DS_Store
