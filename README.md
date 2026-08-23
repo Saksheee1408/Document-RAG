@@ -22,7 +22,7 @@ The system follows a strict 8-step pipeline to ingest documents, index semantic 
 1. PDF Ingestion (pypdf text & page metadata extraction)
        │
        ▼
-2. Structure-Aware Chunking (~600 tokens target size + 100 tokens overlap)
+2. Structure-Aware Chunking (~200 tokens target size + 40 tokens overlap)
        │
        ▼
 3. Local Vector Embedding (SentenceTransformers `all-MiniLM-L6-v2`)
@@ -61,11 +61,11 @@ The system follows a strict 8-step pipeline to ingest documents, index semantic 
 
 ## ✂️ Chunking Strategy & Rationale
 
-- **Target Chunk Size:** ~600 words / tokens (~2,000–2,400 characters).
-- **Overlap:** ~100 words / tokens (~350–400 characters).
+- **Target Chunk Size:** ~200 words / tokens (~800–1,000 characters).
+- **Overlap:** ~40 words / tokens (~150–200 characters).
 - **Structure Awareness:** Text is split along structural paragraph boundaries before applying sliding-window token bounds.
 - **Why these parameters?**
-  1. 600 tokens provides a complete context window for paragraphs, procedures, and tables without diluting semantic vector density.
+  1. 200 tokens provides a focused context window for paragraphs, policies, procedures, and tables without diluting semantic vector density.
   2. 100 token overlap prevents context fragmentation across chunk boundaries.
   3. Every chunk retains immutable metadata: `document_name`, `page_number`, `chunk_index`, and `chunk_id`.
 
